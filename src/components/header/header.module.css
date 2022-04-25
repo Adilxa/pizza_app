@@ -1,0 +1,62 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.leftH1{
+    padding-left: 10px;
+}
+.mid{
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+.right>a{
+    text-decoration: none;
+    color: grey;
+    border: 1px solid rgba(190, 186, 186, 0.92);
+    border-radius: 20px;
+    padding: 5px;
+    font-size: small;
+    background-color: rgba(190, 186, 186, 0.92);
+    
+}
+.coin>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 15px ;
+    text-decoration: none;
+    color: black;
+    font-size: small;
+    font-weight: 600;
+}
+.coin>a>img:hover{
+    transform: skew(8deg,4deg);
+    
+}
+.mid_left{
+    padding-right:25px;
+}
+.mid_right{
+    padding-right: 50px;
+}
+.mid_up>h3{
+    font-weight: 300;
+}
+.bottom>h4{
+    font-weight: 300;
+}
+.bottom_r>h4{
+    color: rgba(190, 186, 186, 0.92);
+    font-weight: 300;
+}
