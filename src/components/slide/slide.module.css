@@ -1,0 +1,16 @@
+.slide{
+    width: 200px;
+    margin-top: 20px;
+    height: 250px;
+    border: solid 3px orange;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    border-radius: 20px;
+}
+.slide>h2{
+    width: 50px;
+    display: flex;
+    padding: 170px 0 0 10px;
+    color: white;
+}

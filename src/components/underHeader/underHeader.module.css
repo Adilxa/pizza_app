@@ -8,6 +8,8 @@
 .nav{
     display: flex;
     margin-top: 35px;
+    height: 50px;
+    align-items: center;
 }
 .btn>a{
     border:1px solid orange;
@@ -17,4 +19,12 @@
     background-color: orange;
     padding: 6px;
     margin-left:80px;
+}
+.nav>button{
+    color: white;
+    border: 1px solid orange;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 25px;
+    margin-left: 30px;
 }

@@ -1,0 +1,30 @@
+.certificate{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 20px;
+}
+.desc{
+    padding-left: 10px;
+}
+.desc>p{
+    color: grey;
+    font-size: small;
+}
+.desc>h2{
+    font-size: medium;
+}
+.pizzaCards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    grid-gap: 25px;
+}
+.underHeader{
+   
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 10;
+    
+}

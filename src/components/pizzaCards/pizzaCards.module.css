@@ -1,0 +1,27 @@
+.cards{
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cards>img{
+    width: 250px;
+    height: 200px;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    position: bottom;
+    padding-top: 10px;
+    align-items: center;
+}
+.btn>button{
+    color: white;
+    text-decoration: none;
+    background-color: orange;
+    padding: 10px 15px;
+    border-radius: 22px;
+    border: none;
+
+}

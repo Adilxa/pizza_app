@@ -1,0 +1,33 @@
+.section{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.section>img{
+    width: 70px;
+}
+.wrapper>.up>p{
+   font-size: 15px;
+  
+}
+.down>p{
+    font-size: 10px;
+    color: burlywood;
+}
+h1{
+    font-size: 25px;
+    padding-left: 10px;
+}
+.desc{
+    display: flex;
+}
+.wrapper{
+    padding-left: 10px;
+}
+.btn>button{
+    border: none;
+    background-color: orange;
+    width:100% ;
+    padding: 5px;
+    margin-left:10px ;
+}

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import css from '../underHeader/underHeader.module.css'
-export default function UnderHeader() {
+import Modal from '../modal/Modal'
+export default function UnderHeader({cart,deleteCart,id}) {
+  const [modal, setModal] = useState(false) 
   return (
     <div className={css.nav}>
-        <div className={css.link}>
+
+      <div  className={css.link}>
         <Link to='/'>Пицца</Link>
         <Link to='/'>Комбо</Link>
         <Link to='/'>Закуски</Link>
@@ -15,10 +19,19 @@ export default function UnderHeader() {
         <Link to='/'>Контакты</Link>
         <Link to='/'>О нас</Link>
         <Link to='/'>Прямой эфир</Link>
-        </div>
-        <div className={css.btn}>
-            <Link to='/'>Корзина</Link>
-        </div>
+      </div>
+
+      <button onClick={() => setModal(!modal)}>
+        корзина |<b> {cart.length} </b>
+      </button> 
+   
+        <Modal cart={cart} active={modal} id={id} deleteCart={deleteCart(id)} setActive={setModal} >
+        </Modal>
+        
+  
+        
     </div>
+
+
   )
 }
