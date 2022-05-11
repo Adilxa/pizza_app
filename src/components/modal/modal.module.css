@@ -22,3 +22,6 @@
 .modal.active{
     transform: scale(1);
 }
+.btn{
+    color: green;
+}

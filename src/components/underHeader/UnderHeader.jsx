@@ -22,10 +22,10 @@ export default function UnderHeader({cart,deleteCart,id}) {
       </div>
 
       <button onClick={() => setModal(!modal)}>
-        корзина |<b> {cart.length} </b>
+        корзина | {cart.length} 
       </button> 
    
-        <Modal cart={cart} active={modal} id={id} deleteCart={deleteCart(id)} setActive={setModal} >
+        <Modal cart={cart} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
         </Modal>
         
   

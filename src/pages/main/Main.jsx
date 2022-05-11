@@ -16,18 +16,18 @@ export default function Main(props) {
         console.log(cart)
     }
     const deleteCart = (id)=>{
-        const remove = cart.filter((item)=>item.id !== cart.id)
-        setCart(remove)
-        console.log(remove)
+        const remove = cart.filter((item)=>item.id !== id)
+        setCart([...remove])
+        console.log(id)
       }
- 
+      
+
   return (
     <div>
         <div className="container">
         <Header />
         <div className={css.underHeader}>
         <UnderHeader cart={cart} deleteCart={deleteCart} id={cart.id}/>
-       
         </div>
         <SliderNavigation/>
         <h2 style={{marginTop:'50px',marginBottom:'30px'}}>
