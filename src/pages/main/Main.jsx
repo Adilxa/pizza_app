@@ -4,30 +4,17 @@ import SliderNavigation from '../../components/sliderNavigation/SliderNavigation
 import OftenOrdered from '../../components/oftenOrdered/OftenOrdered'
 import css from '../main/main.module.css'
 import PizzaCard from '../../components/pizzaCards/PizzaCard'
-import Modal from '../../components/modal/Modal'
 import UnderHeader from '../../components/underHeader/UnderHeader'
-import ModalCards from '../../components/modalcards/ModalCards'
 
 
 export default function Main(props) {
-    const [cart,setCart] = useState([])
-    const handleClick = (item) =>{
-        setCart([...cart,item])
-        console.log(cart)
-    }
-    const deleteCart = (id)=>{
-        const remove = cart.filter((item)=>item.id !== id)
-        setCart([...remove])
-        console.log(id)
-      }
-      
 
   return (
     <div>
         <div className="container">
         <Header />
         <div className={css.underHeader}>
-        <UnderHeader cart={cart} deleteCart={deleteCart} id={cart.id}/>
+        <UnderHeader cart={props.cart} deleteCart={props.deleteCart} id={props.cart.id} total={props.total}/>
         </div>
         <SliderNavigation/>
         <h2 style={{marginTop:'50px',marginBottom:'30px'}}>
@@ -54,7 +41,7 @@ export default function Main(props) {
             props.pizzas.map((item)=><PizzaCard 
             key={item.id}
             item={item}
-            handleClick={handleClick}
+            handleClick={props.handleClick}
             {...item}
             />)
         }

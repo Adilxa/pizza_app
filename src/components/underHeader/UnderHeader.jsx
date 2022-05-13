@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import css from '../underHeader/underHeader.module.css'
 import Modal from '../modal/Modal'
-export default function UnderHeader({cart,deleteCart,id}) {
+export default function UnderHeader({deleteCart,id,...props}) {
+
   const [modal, setModal] = useState(false) 
   return (
     <div className={css.nav}>
@@ -21,11 +22,11 @@ export default function UnderHeader({cart,deleteCart,id}) {
         <Link to='/'>Прямой эфир</Link>
       </div>
 
-      <button onClick={() => setModal(!modal)}>
-        корзина | {cart.length} 
+      <button onClick={() => setModal(true)}>
+        корзина | {props.cart.length} 
       </button> 
    
-        <Modal cart={cart} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
+        <Modal cart={props.cart} total={props.total} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
         </Modal>
         
   

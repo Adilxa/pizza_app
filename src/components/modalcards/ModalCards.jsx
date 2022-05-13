@@ -2,7 +2,9 @@ import React from 'react'
 import css from '../modalcards/modalCards.module.css'
 export default function ModalCards({name,price,image,description,deleteCart,id}) {
   return (
+    
     <>
+    
     <div className={css.section}>
         <img src={image} alt={name} />
         <div className={css.desc}>
@@ -23,7 +25,7 @@ export default function ModalCards({name,price,image,description,deleteCart,id})
         </div>
     </div>
     <div className={css.btn}>
-          <button onClick={()=>deleteCart(id)}>Remove</button>
+          <button style={{color:'white'}} onClick={()=>deleteCart(id)}>Remove</button>
         </div>
     </>
   )

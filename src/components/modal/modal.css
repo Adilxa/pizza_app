@@ -10,24 +10,83 @@
     justify-content: flex-end;
     opacity: 0;
     pointer-events: none;
+    
 }
 
 .modal__content{
-    padding: 20px;
-    background-color: aliceblue;
-    transform: scale(0.5);
+    padding: 2px;
+    background-color: rgb(243,243,247);
+    transform: scale(0.3);
     width: 30vw;
     right: -30vw;
-    transition: all linear 0.4s;
+    transition: all linear 0.3s;
 }
 .modal.active{
     opacity: 1;
     pointer-events: all;
 }
+
 .modal__content.active{
     transform: scale(1);
+    
 }
 .content{
     text-align: center;
-    padding-top: 50px;
+    padding-top: 100px;
+}
+.btn>a{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px;
+    background: orange;
+    border-radius: 25px;
+}
+.btn{
+    margin-top: 25px;
+}
+.total{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.footer{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 5px;
+   background: white;
+}
+.promocode{
+    width: 100%;
+    padding-bottom:10px;
+    padding-top:10px ;
+    border: none;
+    border-bottom:1px solid rgb(179, 179, 179) ;
+    font-size: 18px;
+    
+}
+
+.promocode:focus{
+    outline: none;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+.info>p{
+    margin: 0;
+}
+.info>div{
+    font-size: x-large;
+    font-family: 'Roboto Mono', monospace;
+}
+.btn_sec{
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
 }

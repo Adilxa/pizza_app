@@ -13,6 +13,6 @@ h1,h2,h3,h3,h4,h5,p,a{
   width: 80%;
   margin: 0 auto;
 }
-.Slider_wrapper .slick-arrow::before{
+/* .Slider_wrapper .slick-arrow::before{
   color: orange;
-}
+} */
