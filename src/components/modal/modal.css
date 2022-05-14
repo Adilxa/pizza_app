@@ -89,4 +89,28 @@
     width: 100%;
     padding: 10px;
     font-size: 17px;
+    cursor: pointer;
 }
+.list{
+    height: 388px;
+    overflow-y:auto;
+}
+.list::-webkit-scrollbar { 
+    width: 6px; 
+  } 
+   
+  /* Track */ 
+  .list::-webkit-scrollbar-track { 
+    border-radius: 10px; 
+  } 
+    
+  /* Handle */ 
+  .list::-webkit-scrollbar-thumb { 
+    background: rgb(255, 105, 0);  
+    border-radius: 10px; 
+  } 
+   
+  /* Handle on hover */ 
+  .list::-webkit-scrollbar-thumb:hover { 
+    background: rgb(255, 60, 0);  
+  }

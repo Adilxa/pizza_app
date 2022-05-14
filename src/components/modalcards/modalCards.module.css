@@ -11,8 +11,11 @@
   
 }
 .down>p{
-    font-size: 10px;
-    color: burlywood;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 180px;
 }
 h1{
     font-size: 25px;

@@ -7,19 +7,14 @@ const baseUrl = 'https://625eaacd873d6798e2abb689.mockapi.io/'
 
 function App(props) {
    const [pizzas,setPizzas] =useState([])
-   const [cart,setCart] = useState([])
+   const [cart,setCart] = useState(JSON.parse (localStorage.getItem('cartPizza')) || [])
    const [total ,setTotal] = useState(0)
 
-  
-   
    const handleClick = (item) =>{
     setCart([...cart,item])
     console.log(item.id)
     if(item.id == item.id){
       return 5
-
-
-
     }
    
 }
@@ -29,6 +24,10 @@ const deleteCart = (id)=>{
     setCart([...remove])
     console.log(id)
   }
+
+  useEffect(()=>{
+    localStorage.setItem('cartPizza',JSON.stringify(cart))
+  },[cart])
 
   useEffect(()=>{
     fetch(baseUrl+'pizzaApp')

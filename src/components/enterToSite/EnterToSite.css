@@ -1,0 +1,98 @@
+
+.Modal{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Modal__Content{
+    display: flex;
+    padding: 2px;
+    background-color: rgb(243,243,247);
+    transform: scale(0.3);
+    width: 30vw;
+    height: 30vw;
+    border-radius:20px ;
+}
+.Modal.Active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.Modal__Content.Active{
+    transform: scale(1);
+    
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+.cont>h2{
+    font-size: xx-large;
+}
+.cont>p{
+    color:rgb(92, 99, 112);
+    font-weight:600;
+    padding-top: 10px;
+}
+.cont>h3{
+    color:rgb(92, 99, 112);
+    font-size: 13px;
+    font-weight: 10px;
+    padding-top: 10px;
+}
+.cont>input{
+    border: orange 1px solid;
+    border-radius: 15px;
+    padding: 20px;
+    outline: none;
+    margin: 15px 0px;
+}
+.cont>button{
+    background: orange;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 15px;
+}
+.password>input{
+    border: orange 1px solid;
+    width: 50px;
+    height: 60px;
+    margin: 0px 8px;
+    border-radius: 10px;
+    outline: none;
+}
+.password{
+    display: flex;
+    width: 100%;
+    margin-left:50px ;
+    margin-top: 50px;
+}
+.cont_btn>button{
+    width: 360px;
+    margin-top: 90px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius:15px ;
+    padding: 15px;
+}
+.cont_btn>button{
+    cursor: pointer;
+}
+#EnterInput{
+    font-size: 15px;
+}
