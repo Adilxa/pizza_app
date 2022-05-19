@@ -1,0 +1,41 @@
+
+.btns{
+    text-align: center;
+    padding-top: 40px;
+}
+.btns a{
+    text-decoration: none;
+    font-weight: 600;
+}
+.enter{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    margin-left: 20px;
+    color: blue;
+}
+.inputs{
+    width: 250px;
+    height: 25px;
+}
+.login {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.btn>button{
+    color: black;
+    background:none ;
+    border: none;
+    font-size: 15px;
+    font-weight:600;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.btn>button:hover{
+    color: gray;   
+    transition: 0.5s ease-in-out;
+}
+.wrapper{
+    text-align: center;
+    margin-top: 150px;
+}

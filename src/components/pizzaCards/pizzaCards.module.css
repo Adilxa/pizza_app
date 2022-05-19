@@ -25,3 +25,18 @@
     border: none;
 
 }
+.btns>button:nth-child(1){
+   background: rgb(10, 242, 10);
+   color: white;
+   border: none;
+   padding: 5px;
+   border-radius: 25px;
+   margin-right: 10px;
+}
+.btns>button:nth-child(2){
+    background: rgb(242, 95, 10);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 25px;
+ }

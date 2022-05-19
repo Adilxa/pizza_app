@@ -9,6 +9,8 @@ import UnderHeader from '../../components/underHeader/UnderHeader'
 
 export default function Main(props) {
 
+  const btn = <button onClick={()=>props.handleClick()}>Add to Basket</button>
+
   return (
     <div>
         <div className="container">

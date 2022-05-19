@@ -51,6 +51,7 @@ export default function Header() {
 
 
                 <Link to='/'>Войти</Link>
+                
             </div>
             
         </header>

@@ -1,0 +1,37 @@
+.cart{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    grid-gap: 25px;
+    margin-top: 25px;
+}
+
+.btns>button:nth-child(1){
+    background: rgb(14, 238, 14);
+    border: none;
+    padding:4px ;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
+.btns>button:nth-child(2){
+    background: rgb(255, 74, 34);
+    border: none;
+    padding:5px ;
+    margin-left:8px ;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.add>a{
+    width: 250px;
+}
+
+.add > a{
+    display: flex;
+    margin-top: 120px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
