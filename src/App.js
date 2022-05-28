@@ -71,7 +71,7 @@ function App(props) {
 
           <Route path='/admin' element={<PublicRoute Component={() => <Admin setAuth={setIsAuth} />} isAuth={isAuth} />} />
 
-          <Route path='/dashboard' element={<PrivateRoute Component={() => <Dashboard pizzas={pizzas} />} isAuth={isAuth} />} />
+          <Route path='/dashboard' element={<PrivateRoute Component={() => <Dashboard setAuth={setIsAuth} pizzas={pizzas} />} isAuth={isAuth} />} />
 
           {/* <Route path= '/dashboard' element={<Dashboard pizzas={pizzas}/> }/> */}
           <Route path='/createPizza' element={<PrivateRoute Component={() => <CreatePizza addNewPizza={addNewPizza} />} isAuth={isAuth} />} />

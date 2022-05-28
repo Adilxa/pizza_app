@@ -5,6 +5,10 @@ import css from '../dashboard/Dashboard.module.css'
 import { Link } from 'react-router-dom'
 export default function Dashboard(props) {
 
+    const logout = () =>{
+        props.setAuth(null)
+    }
+
     return (
         <div>
             <div className="container">
@@ -22,6 +26,7 @@ export default function Dashboard(props) {
                             {...item}
                         />)
                     }
+                    <button className={css.btnC} onClick={()=>logout()}>Clear</button>
                 </div>
             </div>
         </div>

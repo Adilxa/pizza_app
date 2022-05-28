@@ -35,3 +35,10 @@
     cursor: pointer;
     
 }
+.btnC>button{
+    background: red;
+    color: white;
+    font-weight: 600;
+    width: 50px;
+    height: 30px;
+}

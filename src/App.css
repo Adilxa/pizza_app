@@ -16,3 +16,8 @@ h1,h2,h3,h3,h4,h5,p,a{
 /* .Slider_wrapper .slick-arrow::before{
   color: orange;
 } */
+.water-text{
+  margin: 0 auto;
+  color: rgb(72, 75, 75);
+  opacity: 0.6;
+}

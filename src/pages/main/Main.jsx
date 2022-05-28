@@ -39,13 +39,16 @@ export default function Main(props) {
 
         <h1 style={{marginBottom:'50px'}}>Пиццы</h1>
         <div className={css.pizzaCards}>
+
         {
+            props.pizzas.length ?
             props.pizzas.map((item)=><PizzaCard 
             key={item.id}
             item={item}
             handleClick={props.handleClick}
             {...item}
             />)
+            : <h1 className='water-text' >you have not some pizzas</h1>
         }
         </div>
        
