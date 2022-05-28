@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/header/Header'
 import PizzaCard from '../../components/pizzaCards/PizzaCard'
 import css from '../dashboard/Dashboard.module.css'

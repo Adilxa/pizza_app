@@ -2,22 +2,33 @@ import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import css from '../admin/Admin.module.css'
 import Dashboard from '../dashboard/Dashboard'
-export default function Admin() {
+import Api from '../../api/Api'
+export default function Admin({setAuth}) {
 
     const [login ,setLogin] = useState('')
     const [password,setPassword] = useState('')
 
     const submit = (e) =>{
         e.preventDefault()
+        Api.auth({
+            login,
+            password
+        })
+        .then((res)=>{
+            if(res.data.token){
+                setAuth(res.data)
+            }else{
+                alert('someting went wrong please try later')
+            }
+        })
     }
 
     const handleEmail = (e) =>{
         setLogin(e.target.value)
-        alert(login)
+      
     }
     const handlePassword = (e) =>{
         setPassword(e.target.value)
-        alert(password)
     }
 
   return (

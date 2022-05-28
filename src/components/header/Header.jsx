@@ -1,8 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom' 
+import {Link, useNavigate} from 'react-router-dom' 
 import css from '../header/header.module.css'
 import UnderHeader from '../underHeader/UnderHeader'
 export default function Header() {
+    const navig = useNavigate()
+    const enter = ()=>{
+        navig('/admin')
+    }
     return (
         <>
         <header className={css.header}>
@@ -50,7 +54,7 @@ export default function Header() {
                 </div>
 
 
-                <Link to='/'>Войти</Link>
+                <button onClick={()=>enter()}>Войти</button>
                 
             </div>
             

@@ -1,13 +1,13 @@
 import React from 'react'
-import { api } from '../../api/Api'
+import Api from '../../api/Api'
 import css from '../pizzaCards/pizzaCards.module.css'
 export default function PizzaCard({handleClick,image,name,description,price,item,...props}) {
 
-  const onDelete = ()=>{
-    api.delete("pizzaApp/" + props.id)
-    .then(()=>{
+  const onDelete = (e)=>{
+    Api.deletePizza(props.id)
+    .then((e)=>{
       alert('you are deleted that pizza')
-      window.location.reload()
+      e.preventDefault()
     })
   }
   return (
