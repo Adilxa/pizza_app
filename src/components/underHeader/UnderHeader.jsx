@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import css from '../underHeader/underHeader.module.css'
 import Modal from '../modal/Modal'
+import { useSelector } from 'react-redux'
 export default function UnderHeader({deleteCart,id,...props}) {
 
+  const basket = useSelector((state)=>state.basket.data)
   const [modal, setModal] = useState(false) 
   return (
     <div className={css.nav}>
@@ -23,10 +25,10 @@ export default function UnderHeader({deleteCart,id,...props}) {
       </div>
 
       <button onClick={() => setModal(true)}>
-        корзина | {props.cart.length} 
+        корзина | {basket.length} 
       </button> 
    
-        <Modal cart={props.cart} total={props.total} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
+        <Modal cart={basket} total={props.total} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
         </Modal>
         
   

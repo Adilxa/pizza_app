@@ -1,7 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import Api from '../../api/Api'
 import css from '../pizzaCards/pizzaCards.module.css'
-export default function PizzaCard({handleClick,image,name,description,price,item,...props}) {
+export default function PizzaCard({image,name,description,price,item,...props}) {
+
+  const dispatch = useDispatch()
+
+  const addToBasket = () =>{
+    const data = {item}
+    dispatch({type:"SET_PIZZA_BASKET",payload:data})
+  }
 
   const onDelete = (e)=>{
     Api.deletePizza(props.id)
@@ -25,7 +33,7 @@ export default function PizzaCard({handleClick,image,name,description,price,item
                 <button>Change</button>
                 <button onClick={()=>onDelete()}>Delete</button>
               </div>: 
-              <button onClick={()=>handleClick(item)}>Add to Order</button>
+              <button onClick={addToBasket}>Add to Order</button>
             }
             
         

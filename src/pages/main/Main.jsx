@@ -5,18 +5,20 @@ import OftenOrdered from '../../components/oftenOrdered/OftenOrdered'
 import css from '../main/main.module.css'
 import PizzaCard from '../../components/pizzaCards/PizzaCard'
 import UnderHeader from '../../components/underHeader/UnderHeader'
+import { useSelector } from 'react-redux'
+import { store } from '../../Redux'
 
 
 export default function Main(props) {
 
-  const btn = <button onClick={()=>props.handleClick()}>Add to Basket</button>
+  const pizza = useSelector((state)=>state.pizzas.data)
 
   return (
     <div>
         <div className="container">
         <Header />
         <div className={css.underHeader}>
-        <UnderHeader cart={props.cart} deleteCart={props.deleteCart} id={props.cart.id} total={props.total}/>
+        <UnderHeader  deleteCart={props.deleteCart} total={props.total}/>
         </div>
         <SliderNavigation/>
         <h2 style={{marginTop:'50px',marginBottom:'30px'}}>
@@ -39,13 +41,13 @@ export default function Main(props) {
 
         <h1 style={{marginBottom:'50px'}}>Пиццы</h1>
         <div className={css.pizzaCards}>
-
+      
+        
         {
-            props.pizzas.length ?
-            props.pizzas.map((item)=><PizzaCard 
+            pizza.length ?
+            pizza.map((item)=><PizzaCard 
             key={item.id}
             item={item}
-            handleClick={props.handleClick}
             {...item}
             />)
             : <h1 className='water-text' >you have not some pizzas</h1>
