@@ -18,7 +18,7 @@ export default function Main(props) {
         <div className="container">
         <Header />
         <div className={css.underHeader}>
-        <UnderHeader  deleteCart={props.deleteCart} total={props.total}/>
+        <UnderHeader total={props.total}/>
         </div>
         <SliderNavigation/>
         <h2 style={{marginTop:'50px',marginBottom:'30px'}}>

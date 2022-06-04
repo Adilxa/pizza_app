@@ -4,7 +4,7 @@ import { useState } from 'react'
 import css from '../underHeader/underHeader.module.css'
 import Modal from '../modal/Modal'
 import { useSelector } from 'react-redux'
-export default function UnderHeader({deleteCart,id,...props}) {
+export default function UnderHeader({id,...props}) {
 
   const basket = useSelector((state)=>state.basket.data)
   const [modal, setModal] = useState(false) 
@@ -28,7 +28,7 @@ export default function UnderHeader({deleteCart,id,...props}) {
         корзина | {basket.length} 
       </button> 
    
-        <Modal cart={basket} total={props.total} active={modal} id={id} deleteCart={deleteCart} setActive={setModal} >
+        <Modal cart={basket} total={props.total} active={modal} id={id} setActive={setModal} >
         </Modal>
         
   

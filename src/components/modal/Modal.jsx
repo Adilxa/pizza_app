@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import EnterToSite from '../enterToSite/EnterToSite'
 import '../modal/modal.css'
 import ModalCards from '../modalcards/ModalCards'
 
-export default function Modal({ deleteCart, setCart, id, total, ...props }) {
+export default function Modal({ setCart, id, total, ...props }) {
 
   const [enterModal, setEnterModal] = useState(false)
 
-
+  const basket = useSelector((state)=>state.basket.data)
   console.log(props.cart);
   return (
     <>
@@ -26,12 +27,11 @@ export default function Modal({ deleteCart, setCart, id, total, ...props }) {
             props.cart.length
               ?
               <div className='list'>
-                {props.cart.map((item) =>
+                {basket.map((item,index) =>
                   <ModalCards
-                    deleteCart={deleteCart}
                     name={item.name}
                     id={item.id}
-                    key={item.id}
+                    key={index}
                     description={item.description}
                     image={item.image}
                     price={item.price} />

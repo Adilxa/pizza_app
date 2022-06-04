@@ -1,6 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import css from '../modalcards/modalCards.module.css'
 export default function ModalCards({ name, price, image, description, deleteCart, id }) {
+  const dispatch = useDispatch()
+  const onDelete = () =>{
+    dispatch({type:"DELETE_PIZZA_BASKET" , id: id})
+  }
+  
   return (
 
     <>
@@ -25,7 +31,7 @@ export default function ModalCards({ name, price, image, description, deleteCart
         </div>
       </div>
       <div className={css.btn}>
-        <button style={{ color: 'white' }} onClick={() => deleteCart(id)}>Remove</button>
+        <button style={{ color: 'white' }} onClick={onDelete}>Remove</button>
       </div>
     </>
   )
