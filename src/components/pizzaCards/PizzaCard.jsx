@@ -1,20 +1,21 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import Api from '../../api/Api'
+import { SET_PIZZA_BASKET } from '../../Redux/ActionTypes'
 import css from '../pizzaCards/pizzaCards.module.css'
 export default function PizzaCard({image,name,description,price,item,...props}) {
 
   const dispatch = useDispatch()
 
   const addToBasket = () =>{
-    const data = {item}
-    dispatch({type:"SET_PIZZA_BASKET",payload:data})
+    const data = {image,name,description,price}
+    dispatch({type:SET_PIZZA_BASKET,payload:data})
   }
 
   const onDelete = (e)=>{
     Api.deletePizza(props.id)
     .then((e)=>{
-      alert('you are deleted that pizza')
+      alert('you are deleteditem that pizza')
       e.preventDefault()
     })
   }

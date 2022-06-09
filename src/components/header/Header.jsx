@@ -2,11 +2,18 @@ import React from 'react'
 import {Link, useNavigate} from 'react-router-dom' 
 import css from '../header/header.module.css'
 import UnderHeader from '../underHeader/UnderHeader'
-export default function Header() {
+import { SET_LOGOUT } from '../../Redux/ActionTypes'
+import { useDispatch } from 'react-redux'
+export default function Header(props) {
     const navig = useNavigate()
     const enter = ()=>{
         navig('/admin')
     }
+    const  dispatch = useDispatch()
+    const logout = () =>{
+        dispatch({ type: SET_LOGOUT })
+    }
+  
     return (
         <>
         <header className={css.header}>
@@ -53,8 +60,14 @@ export default function Header() {
                     </Link>
                 </div>
 
-
-                <button onClick={()=>enter()}>Войти</button>
+                {
+                    props.outBtn? <button className={css.btnC} 
+                    onClick={()=>logout()}>Выйти</button>
+                    :
+                   
+                    <button onClick={()=>enter()}>Войти</button>
+                }
+                 
                 
             </div>
             

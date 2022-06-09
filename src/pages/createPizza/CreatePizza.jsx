@@ -1,16 +1,14 @@
 import React from 'react'
 import css from '../createPizza/CreatePizza.module.css'
 import { useState } from 'react'
-import { useEffect } from 'react'
 import Api from '../../api/Api'
-import { Link, useNavigate } from 'react-router-dom'
-import Dashboard from '../dashboard/Dashboard'
+import { useNavigate } from 'react-router-dom'
 export default function CreatePizza({addNewPizza}) {
   
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
-
+  const [image,setimage] = useState([])
 
   const submit = (e) =>{
     e.preventDefault()
@@ -52,11 +50,13 @@ export default function CreatePizza({addNewPizza}) {
   const handleName = (e) =>{
       setName(e.target.value)
   }
+  const handleImage = (e) =>{
+    setimage(e.target.value)
+  }
   return (
     <div className='container'>
         <div className={css.title}> <h1> Создай свою Пиццу</h1></div>
         <form onSubmit={submit} className={css.inputs}>
-
             
             <input className={css.name} onChange={handleName} value={name} type="text" placeholder='Название'/>
 
@@ -65,15 +65,13 @@ export default function CreatePizza({addNewPizza}) {
             <input className={css.price} onChange={handlePrice} type="number" placeholder='Цена' />
 
              <label className={css.download}>   
-            <input className={css.hideinput} type="file" />
+            <input onChange={handleImage} className={css.hideinput} type="file" />
                 <h3>Выбрать картинку</h3>
                 <img src="https://cdn-icons-png.flaticon.com/128/7048/7048359.png" alt="" />
             </label> 
             <div className={css.create}>  
             <button onClick={()=>navigate()}><h3>Создать</h3></button></div>
         </form>
-
-        
     </div>
   )
 }

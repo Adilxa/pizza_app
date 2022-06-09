@@ -1,12 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { DELETE_PIZZA_BASKET } from '../../Redux/ActionTypes'
 import css from '../modalcards/modalCards.module.css'
-export default function ModalCards({ name, price, image, description, deleteCart, id }) {
+export default function ModalCards({ name, price, image, description, deleteCart ,...props}) {
+  
   const dispatch = useDispatch()
   const onDelete = () =>{
-    dispatch({type:"DELETE_PIZZA_BASKET" , id: id})
-  }
-  
+    dispatch({type:DELETE_PIZZA_BASKET , id:props.id})
+    console.log(props.id);
+  }  
   return (
 
     <>

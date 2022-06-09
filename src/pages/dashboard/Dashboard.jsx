@@ -3,18 +3,16 @@ import Header from '../../components/header/Header'
 import PizzaCard from '../../components/pizzaCards/PizzaCard'
 import css from '../dashboard/Dashboard.module.css'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 export default function Dashboard(props) {
 
-    const pizzas = useSelector((state)=>state.pizzas.data)
-    const logout = () =>{
-        props.setAuth(null)
-    }
 
+    const pizzas = useSelector((state)=>state.pizzas.data)
+   
     return (
         <div>
             <div className="container">
-                <Header />
+                <Header outBtn={true} />
                 <div className={css.cart}>
                     <div className={css.add}>
                         <Link to='/createPizza'>
@@ -28,7 +26,8 @@ export default function Dashboard(props) {
                             {...item}
                         />)
                     }
-                    <button className={css.btnC} onClick={()=>logout()}>Clear</button>
+
+                    
                 </div>
             </div>
         </div>

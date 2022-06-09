@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 export default function UnderHeader({id,...props}) {
 
   const basket = useSelector((state)=>state.basket.data)
+  
   const [modal, setModal] = useState(false) 
   return (
     <div className={css.nav}>
@@ -28,7 +29,7 @@ export default function UnderHeader({id,...props}) {
         корзина | {basket.length} 
       </button> 
    
-        <Modal cart={basket} total={props.total} active={modal} id={id} setActive={setModal} >
+        <Modal cart={basket} active={modal} id={id} setActive={setModal} >
         </Modal>
         
   

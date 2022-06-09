@@ -96,3 +96,7 @@
 #EnterInput{
     font-size: 15px;
 }
+.password>input{
+    align-items: center;
+    
+}

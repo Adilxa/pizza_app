@@ -15,12 +15,8 @@ function App() {
 
   const dispatch = useDispatch()
 
-  const [total, setTotal] = useState(0)
-  const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem('auth')))
-
 
   const addNewPizza = (newPizza) => {
-
     // setPizzas([...pizzas, newPizza]) redux logic rewrite
   }
 
@@ -37,23 +33,19 @@ function App() {
     //    console.log(data)
     // })
   }, [])
-  useEffect(()=>{
-      localStorage.setItem("auth",JSON.stringify(isAuth))
-  },[isAuth])
-  
 
   return (
     <BrowserRouter>
 
       <div className='App'>
         <Routes>
-          <Route path='/' element={<Main total={total} />} />
+          <Route path='/' element={<Main/>} />
 
-          <Route path='/admin' element={<PublicRoute Component={() => <Admin setAuth={setIsAuth} />} isAuth={isAuth} />} />
+          <Route path='/admin' element={<PublicRoute Component={ Admin } /> } />
 
-          <Route path='/dashboard' element={<PrivateRoute Component={() => <Dashboard setAuth={setIsAuth} />} isAuth={isAuth} />} />
+          <Route path='/dashboard' element={<PrivateRoute Component={Dashboard}/> } />
 
-          <Route path='/createPizza' element={<PrivateRoute Component={() => <CreatePizza addNewPizza={addNewPizza} />} isAuth={isAuth} />} />
+          <Route path='/createPizza' element={<PrivateRoute Component={() => <CreatePizza addNewPizza={addNewPizza} />}  />} />
         </Routes>
       </div>
     </BrowserRouter>

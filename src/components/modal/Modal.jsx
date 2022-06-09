@@ -5,12 +5,11 @@ import EnterToSite from '../enterToSite/EnterToSite'
 import '../modal/modal.css'
 import ModalCards from '../modalcards/ModalCards'
 
-export default function Modal({ setCart, id, total, ...props }) {
-
+export default function Modal({ setCart, id, ...props }) {
   const [enterModal, setEnterModal] = useState(false)
 
-  const basket = useSelector((state)=>state.basket.data)
   console.log(props.cart);
+  const total = 0;
   return (
     <>
       <div className={props.active ? 'modal active' : 'modal'} onClick={() => props.setActive(false)}>
@@ -19,7 +18,8 @@ export default function Modal({ setCart, id, total, ...props }) {
           {
             props.cart.length ?
               <div className="total">
-                <h3> {props.cart.length} товар на {props.cart.reduce((sum, total) => sum + Math.floor(total.price), 0)}сомов</h3></div>
+                <h3> {props.cart.length} товар на {props.cart.reduce(
+                  (acc, item) => acc + Number(item.price),0)}сомов</h3></div>
               : ''
           }
 
@@ -27,7 +27,7 @@ export default function Modal({ setCart, id, total, ...props }) {
             props.cart.length
               ?
               <div className='list'>
-                {basket.map((item,index) =>
+                {props.cart.map((item,index) =>
                   <ModalCards
                     name={item.name}
                     id={item.id}

@@ -18,7 +18,7 @@ export default function SecondEnterModal(props) {
         <input type="text" />
         </div>
         <div className="cont_btn">
-        <button> <h3>Получить Новы код</h3></button>
+        <button> <h3>Получить Новый код</h3></button>
         </div>
 
         </div>
